@@ -10,8 +10,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
+        <nexus.repository.host>localhost</nexus.repository.host>
+        <nexus.repository.port>:8081</nexus.repository.port>
+        <nexus.repository.base></nexus.repository.base>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -21,4 +24,22 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    
+    <distributionManagement>
+        <snapshotRepository>
+            <id>devopssquare-snapshots</id>
+            <name>DevopsSquare Snapshots</name>
+            <url>http://${nexus.repository.host}${nexus.repository.port}${nexus.repository.base}/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>devopssquare-releases</id>
+            <name>DevopsSquare Snapshots</name>
+            <url>http://${nexus.repository.host}${nexus.repository.port}${nexus.repository.base}/content/repositories/releases</url>
+        </repository>
+        <site>
+            <id>devopssquare-site</id>
+            <name>DevopsSquare Site</name>
+            <url>dav:http://${nexus.repository.host}${nexus.repository.port}${nexus.repository.base}/content/repositories/site/${project.groupId}/${project.artifactId}/${project.version}</url>
+        </site>
+    </distributionManagement>
 </project>
