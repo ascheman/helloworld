@@ -13,7 +13,7 @@
 
         <nexus.repository.host>localhost</nexus.repository.host>
         <nexus.repository.port>:8081</nexus.repository.port>
-        <nexus.repository.base></nexus.repository.base>
+        <nexus.repository.base>/nexus</nexus.repository.base>
     </properties>
 
     <dependencies>
